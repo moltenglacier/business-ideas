@@ -7,16 +7,16 @@
     "dev": "forever -w ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.0.0",
-    "cookie-parser": "~1.0.1",
-    "debug": "~0.7.4",
-    "ejs": "~0.8.5",
-    "express": "~4.2.0",
-    "express-flash": "0.0.2",
-    "express-session": "^1.7.6",
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "debug": "latest",
+    "ejs": "latest",
+    "express": "latest",
+    "express-flash": "latest",
+    "express-session": "latest",
     "mongoose": "latest",
-    "morgan": "~1.0.0",
-    "parameterize": "0.0.7",
-    "static-favicon": "~1.0.0"
+    "morgan": "latest",
+    "parameterize": "latest",
+    "serve-favicon": "latest"
   }
 }

@@ -12,7 +12,7 @@ db.once('open', function() {
   // Create your schemas and models here.
 });
 
-mongoose.connect(process.env.MONGOHQ_URL);
+mongoose.connect(process.env.MONGOHQ_URL || 'mongodb://localhost');
 
 var ideaSchema = new mongoose.Schema({
   email: String,
@@ -66,6 +66,23 @@ router.get('/hypothesis/:code', function(req, res) {
       res.redirect('/?i');
     }
   });
+});
+
+router.get('/hypothesis/:code/answer', function(req, res) {
+  Idea.findOne({ code: req.params.code }, function(err, idea) {
+    if (err) {
+      return console.error(err);
+    }
+    if (idea) {
+      res.render('answer', { idea: idea });
+    } else {
+      res.redirect('/?i');
+    }
+  });
+});
+
+router.get('/answer', function(req, res) {
+  res.render('answer', {});
 });
 
 module.exports = router;
